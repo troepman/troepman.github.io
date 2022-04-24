@@ -1,23 +1,128 @@
 <html>
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link href="main.css" rel="stylesheet" />
-</head>
-<body>
-  <canvas id="background" class="background"></canvas>
-  <header>
-    <a>Experience</a>
-    <a>Projects</a>
-  </header>
-  <content>
-    <div class="information-block">
-      <div class="info">
-        Thore Roepman
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link href="main.css" rel="stylesheet" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Thore Roepman</title>
+  </head>
+  <body>
+    <canvas id="background" class="background"></canvas>
+    <header>
+      <a href="#about" class="navigation-link">About</a>
+      <a href="#experience" class="navigation-link">Experience</a>
+      <!-- <a href="#education" class="navigation-link">Education</a> -->
+    </header>
+    <content>
+      <div class="block information">
+        <a id="about" class="anchor"></a>
+        <div class="info">
+          <h1>
+            Thore Roepman <br />
+            <div class="function">
+              Co-Founder at Laminance | Research & Development
+            </div>
+          </h1>
+
+          <p>
+            Hi, Good to see you have find your way to my web profile. My name is
+            Thore Roepman and as recent Aerospace Engineering Graduate I devote
+            my time solving engineering problems using modern tools.
+          </p>
+          <div class="flex-fill"></div>
+          <div class="social-bar">
+            <a
+              href="https://www.linkedin.com/in/thore-roepman/"
+              target="_blank"
+            >
+              <svg
+                class="link-logo"
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="fill"></div>
+        <img class="image" src="portret.jpg" />
       </div>
-      <img class="image" src="portret.jpg" />
-    </div>
-  </content>
-</body>
+      <div class="block experience">
+        <a id="experience" class="anchor"></a>
+        <div class="header">
+          <h1>Experience</h1>
+        </div>
+
+        <div class="block inset right experience1">
+          <div>
+            <h1>
+              Laminance
+              <div class="function">Co-Founder | Research & Development</div>
+              <div class="period">2021 - Current</div>
+            </h1>
+            <p>
+              During my MSc. Thesis I developed and patented an algorithm to
+              create a manufacturable high performance composite laminates. In
+              the start-up Laminance, we are pushing these laminates to several
+              industries, specifically aiming for the aerospace sector. As
+              Co-Founder I push the algorithm and contact aerospace vendors for
+              adoption.
+            </p>
+          </div>
+        </div>
+
+        <div class="block inset left experience2">
+          <a id="experience2" class="anchor anchor-with-header"></a>
+          <div>
+            <h1>
+              Flying Fish
+              <div class="function">Full Stack Developer | Engineer</div>
+              <div class="period">2019 - 2022</div>
+            </h1>
+            <p>
+              Since the founding of Flying Fish I have been employed as an
+              engineer and full stack developer. I created a highly scalable
+              planningstool for a complex taxi network that is currently used by
+              the Watertaxi Rotterdam. It was my responsibility to launch these
+              changes without any downtime.
+            </p>
+          </div>
+        </div>
+
+        <div class="block inset right experience3">
+          <a id="experience2" class="anchor anchor-with-header"></a>
+          <div>
+            <h1>
+              TU Delft Solarboat Team
+              <div class="function">
+                Test Pilot | Propulsion Engineer | Technical Committee Member
+              </div>
+              <div class="period">2015 - 2020</div>
+            </h1>
+            <p>
+              Next to my Aerospace Engineering study I worked as an engineer for
+              the TU Delft Solarboat team. As a drivetrain engineer and pilot I
+              maintained good connection with all engineering and strategy
+              departments. During the races I was responsible for stabilizing
+              the boat and propelling it to the finish as quick as possible.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="block education">
+        <a id="education" class="anchor"></a>
+        <h1>Education</h1>
+      </div> -->
+    </content>
+    <script src="main.js"></script>
+  </body>
 </html>
