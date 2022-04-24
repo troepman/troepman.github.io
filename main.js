@@ -10,16 +10,27 @@ onResize();
 
 const gl = canvas.getContext('webgl2')
 
-let vertices = [
-    -0.8,0.5,0.0,
-    0.9,0.0,0.0,
-    -0.9,0.25,0.0, 
- ]
-let velocities = [
-    0.0, 0.5, 0.0,
-    0.0, 0.7, 0.0,
-    0.0, 0.8, 0.0
-]
+let vertices = []
+let velocities = []
+const PARTICLE_COUNT=10
+
+function startX(){
+    let x = Math.random()
+    if (x > 0.5) {
+        x = 0.9 + (x - 0.75) / 0.5 * 0.2
+    } else {
+        x = -0.9 + (x - 0.25) / 0.5 * 0.2
+    }
+    return x;
+}
+for (let i = 0; i < PARTICLE_COUNT; i++){
+    let x = startX();
+    let y = Math.random() * 2 - 1
+    vertices.push(x, y, 0)
+
+    let vy = Math.random()*0.25 + 0.25
+    velocities.push(0, vy, 0)
+}
 // Create an empty buffer object to store the vertex buffer
 var vertex_buffer = gl.createBuffer();
 
@@ -58,7 +69,7 @@ gl.compileShader(vertShader);
 // fragment shader source code
 var fragCode =
 'void main(void) {' +
- ' gl_FragColor = vec4(0.8, 1.0, 0.8, 0.1);' +
+ ' gl_FragColor = vec4(0.4, 0.5, 0.3, 0.1);' +
 '}';
 
 // Create fragment shader object
@@ -103,10 +114,11 @@ gl.enableVertexAttribArray(coord);
 /*============= Drawing the primitive ===============*/
 function updatePosition() {
     const FPS = 60
-    for (let i = 0; i < 9; i+=3){
+    for (let i = 0; i < PARTICLE_COUNT*3; i+=3){
         vertices[i+1] += velocities[i+1] / FPS
         if (vertices[i+1] > 1){
             vertices[i+1] = -1
+            vertices[i] = startX()
         }
     }
     updateVerticesBuffer(vertices)
@@ -126,7 +138,7 @@ function render(){
     gl.viewport(0,0,canvas.width,canvas.height);
 
     // Draw the triangle
-    gl.drawArrays(gl.POINTS, 0, 3);
+    gl.drawArrays(gl.POINTS, 0, PARTICLE_COUNT);
     requestAnimationFrame(render)
 }
 requestAnimationFrame(render)
