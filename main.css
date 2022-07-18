@@ -188,14 +188,26 @@ div.flex-fill {
 }
 .link-logo {
   height: 32px;
+  margin: 5px;
 }
-.link-logo path {
+.link-logo:hover {
+  cursor: pointer;
+}
+.link-logo.fill path, 
+.link-logo .animate {
   fill: #fafafa;
   transition: fill 0.2s;
 }
-.link-logo:hover path {
+.link-logo.fill:hover path,
+.link-logo:hover .animate {
   fill: #dadada;
-  cursor: pointer;
+}
+.link-logo.stroke path {
+  stroke: #fafafa;
+  transition: stroke 0.2s;
+}
+.link-logo.stroke:hover path {
+  stroke: #dadada;
 }
 
 @media only screen and (max-aspect-ratio: 5/5) {
