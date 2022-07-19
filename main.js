@@ -67,9 +67,10 @@ gl.shaderSource(vertShader, vertCode);
 gl.compileShader(vertShader);
 
 // fragment shader source code
+// color: 1E5128 -> 
 var fragCode =
 'void main(void) {' +
- ' gl_FragColor = vec4(0.4, 0.5, 0.3, 0.1);' +
+ ' gl_FragColor = vec4(0.12, 0.32, 0.3, 0.15);' +
 '}';
 
 // Create fragment shader object
